@@ -5,6 +5,7 @@
 
         <form class="login100-form validate-form" action="{{ route('register') }}" method="POST">
             @csrf
+            @method('POST')
             <span class="login100-form-title">
                     Registration
                 </span>
@@ -31,9 +32,9 @@
                     <span class="custom-control-label">Agree the <a href="terms.html">terms and policy</a></span>
                 </label>
             <div class="container-login100-form-btn">
-                <a href="index.html" class="login100-form-btn btn-primary">
+                <button type="submit" class="login100-form-btn btn-primary">
                         Register
-                    </a>
+                </button>
             </div>
             <div class="text-center pt-3">
                 <p class="text-dark mb-0 d-inline-flex">Already have account ?<a href="{{route('login')}}" class="text-primary ms-1">Sign In</a></p>
