@@ -21,6 +21,7 @@ Route::middleware(['auth', 'role:Super Admin'])->group(function () {
     Route::get('/admin/dashboard', [AdminController::class, 'dashboard'])->name('admin.dashboard');
     Route::resource('/admin/users', UserController::class);
     Route::post('/admin/{user}/ban', [UserController::class, 'toggleBan'])->name('admin.users.ban');
+    Route::get('/admin/profile/edit', [AdminController::class, 'editprofile']);
     Route::resource('/admin/roles', RoleController::class);
     Route::resource('/admin/permissions', PermissionController::class);
     Route::get('/admin/settings', [SettingsController::class, 'index'])->name('admin.settings.index');
