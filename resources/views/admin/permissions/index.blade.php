@@ -20,6 +20,9 @@
             <div class="card">
                 <div class="card-header border-bottom-0">
                     <!--<h2 class="card-title">1 - 30 of 546 users</h2>-->
+                    <div class="card-title">
+                        <a href="{{route('permissions.create')}}" class="btn btn-primary">Create Permission</a>
+                    </div>
                     <div class="page-options ms-auto">
                         <select class="form-control select2 w-100">
                             <option value="asc">Latest</option>
@@ -51,7 +54,14 @@
                                     <td class="text-nowrap align-middle"><span>{{$permission->guard_name}}</span></td>
                                     <td class="text-center align-middle">
                                         <div class="btn-group align-top">
-                                            <button class="btn btn-sm btn-primary badge" data-target="#user-form-modal" data-bs-toggle="" type="button">Edit</button> <button class="btn btn-sm btn-primary badge" type="button"><i class="fa fa-trash"></i></button>
+                                            <a class="btn btn-sm btn-primary badge"  href="{{ route('permissions.edit',$permission->id) }}">Edit</a>
+                                            <form action="{{route('permissions.destroy',$permission->id)}}" method="POST">
+                                                @csrf
+                                                @method('DELETE')
+                                                <button class="btn btn-sm btn-primary badge" type="submit"><i class="fa fa-trash"></i></button>
+
+                                            </form>
+
                                         </div>
                                     </td>
 
