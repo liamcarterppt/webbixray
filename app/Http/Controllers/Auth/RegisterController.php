@@ -30,7 +30,7 @@ class RegisterController extends Controller
      *
      * @var string
      */
-    protected $redirectTo = '/home';
+
     protected $redirectTo = '/dashboard';
 
     /**
@@ -54,7 +54,7 @@ class RegisterController extends Controller
         return Validator::make($data, [
             'name' => ['required', 'string', 'max:255'],
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
-            'password' => ['required', 'string', 'min:8', 'confirmed'],
+            'password' => ['required', 'string', 'min:8'],
         ]);
     }
 
@@ -71,26 +71,6 @@ class RegisterController extends Controller
             'email' => $data['email'],
             'password' => Hash::make($data['password']),
         ]);
-
-
-    // Check if a referral code was used
-    if (!empty($data['referral_code'])) {
-        $referrer = User::where('referral_code', $data['referral_code'])->first();
-
-        if ($referrer) {
-            Referral::create([
-                'referrer_id' => $referrer->id,
-                'referred_id' => $user->id,
-                'referral_code' => $data['referral_code'],
-                'reward_amount' => 0, // Default reward; update based on product/service
-            ]);
-        }
-    }
-
-    // Assign default role
-    $user->assignRole('customer');
-
-    return $user;
-
+        return $user;
     }
 }
