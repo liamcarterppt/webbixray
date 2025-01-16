@@ -20,6 +20,9 @@
             <div class="card">
                 <div class="card-header border-bottom-0">
                     <!--<h2 class="card-title">1 - 30 of 546 users</h2>-->
+                    <div class="card-title">
+                        <a href="{{route('roles.create')}}" class="btn btn-primary">Create roles</a>
+                    </div>
                     <div class="page-options ms-auto">
                         <select class="form-control select2 w-100">
                             <option value="asc">Latest</option>
