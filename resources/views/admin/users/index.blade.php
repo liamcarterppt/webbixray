@@ -20,7 +20,11 @@
             <div class="card">
                 <div class="card-header border-bottom-0">
                     <!--<h2 class="card-title">1 - 30 of 546 users</h2>-->
+                    <div class="card-title">
+                        <a href="{{route('users.create')}}" class="btn btn-primary">Create User</a>
+                    </div>
                     <div class="page-options ms-auto">
+                        <a href=""></a>
                         <select class="form-control select2 w-100">
                             <option value="asc">Latest</option>
                             <option value="desc">Oldest</option>
@@ -40,8 +44,9 @@
                                 </tr>
                             </thead>
                             <tbody>
+                                @foreach ($users as $user)
                                 <tr>
-                                    @foreach ($users as $user)
+                                    
                                     <td class="align-middle text-center">
                                         <div class="custom-control custom-control-inline custom-checkbox custom-control-nameless m-0 align-top">
                                             <input class="custom-control-input" id="item-1" type="checkbox"> <label class="custom-control-label" for="item-1"></label>
@@ -55,10 +60,10 @@
                                             <button class="btn btn-sm btn-primary badge" data-target="#user-form-modal" data-bs-toggle="" type="button">Edit</button> <button class="btn btn-sm btn-primary badge" type="button"><i class="fa fa-trash"></i></button>
                                         </div>
                                     </td>
-                                    @endforeach
+                                    
 
                                 </tr>
-
+                                @endforeach
                             </tbody>
                         </table>
                     </div>
