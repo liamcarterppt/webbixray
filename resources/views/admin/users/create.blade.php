@@ -14,6 +14,7 @@
             <div class="card-body">
             <form method="POST" action="{{route('users.store')}}">
             @csrf
+            @method('POST')
                 <div class="form-group">
                     <div class="mb-3">
                         <label class="form-label">User Name</label>
@@ -42,7 +43,6 @@
                         <div class="mb-3">
                             <button type="submit" class="btn btn-primary"> Create </button>
                         </div>
-\
                     </div>
                 </form>
                              
