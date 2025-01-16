@@ -341,25 +341,28 @@
                     <div class="dropdown-menu dropdown-menu-end dropdown-menu-arrow">
                         <div class="drop-heading">
                             <div class="text-center">
-                                <h5 class="text-dark mb-0 fs-14 fw-semibold">Percy Kewshun</h5>
-                                <small class="text-muted">Senior Admin</small>
+                                <h5 class="text-dark mb-0 fs-14 fw-semibold">{{Auth::user()->name}}</h5>
+                                <small class="text-muted">{{Auth::user()->getRoleNames()->first()}}</small>
                             </div>
                         </div>
                         <div class="dropdown-divider m-0"></div>
                         <a class="dropdown-item" href="{{route('admin.profile')}}">
                             <i class="dropdown-icon fe fe-user"></i> Profile
                         </a>
-                        <a class="dropdown-item" href="email-inbox.html">
+                        <a class="dropdown-item" href="{{route('admin.mywallet')}}">
                             <i class="dropdown-icon fe fe-mail"></i> My Wallet
                         <!--    <span class="badge bg-danger rounded-pill float-end">5</span> -->
                         </a>
-                        <a class="dropdown-item" href="email-inbox.html">
-                            <i class="dropdown-icon fe fe-mail"></i> Transactions
-                        <!--    <span class="badge bg-danger rounded-pill float-end">5</span> -->
+
+                        <a class="dropdown-item" onclick="event.preventDefault();
+                                      document.getElementById('logout-form').submit();"  >
+                            <i class="dropdown-icon fe fe-alert-circle" ></i> {{ __('Logout') }}
                         </a>
-                        <a class="dropdown-item" href="login.html">
-                            <i class="dropdown-icon fe fe-alert-circle"></i> Sign out
-                        </a>
+
+                     <form id="logout-form" action="{{ route('logout') }}" method="Post" class="d-none">
+                         @csrf
+                         @method('POST')
+                     </form>
                     </div>
                 </div>
             </div>

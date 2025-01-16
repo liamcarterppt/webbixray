@@ -13,13 +13,23 @@ class SettingSeeder extends Seeder
     {
         $settings = [
             ['key' => 'site_name', 'value' => 'Webbix Ray IT Solutions'],
+            ['key' => 'site_logo', 'value' => 'logo.png'],
+            ['key' => 'site_ico', 'value' => 'favicon.ico'],
+            ['key' => 'site_description', 'value' => 'Webbix Ray IT Solutions is a leading IT company providing innovative IT solutions for businesses.'],
             ['key' => 'site_tagline', 'value' => 'Innovative IT Solutions for Your Business'],
             ['key' => 'site_email', 'value' => 'support@webbixray.com'],
             ['key' => 'site_phone', 'value' => '+1234567890'],
             ['key' => 'site_address','value' => '123 IT Park, Tech City, Country'],
+            ['key' => 'site_currency','value' => 'MMK'],
+            ['key' => 'site_currency_symbol','value' => 'Ks'],
+            ['key' => 'site_currency_position','value' => 'left'], // left = $100, right = 100$
+            ['key' => 'site_language','value' => 'en'],
+
+            ['key' => 'maintenance_mode', 'value' => '0'],
+
             ['key' => 'default_timezone','value' => 'Asia/Yangon'],
             ['key' => 'enable_2fa','value' => '0'],// 0 = Disabled, 1 = Enabled
-            ['key' => 'maintenance_mode', 'value' => '0'],
+
             ['key' => 'maintenance_message','value' => 'The site is currently under maintenance. Please check back later.'],
             ['key' => 'referral_reward_percentage', 'value' => '10'],
             ['key' => 'default_currency', 'value' => 'MMK'],

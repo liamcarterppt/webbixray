@@ -15,15 +15,12 @@ class Referral extends Model
         'is_rewarded',
     ];
 
-    // Relationship to referrer (user who referred)
-    public function referrer()
-    {
+
+    public function referrer() {
         return $this->belongsTo(User::class, 'referrer_id');
     }
 
-    // Relationship to referred user
-    public function referred()
-    {
+    public function referredUser() {
         return $this->belongsTo(User::class, 'referred_id');
     }
 }

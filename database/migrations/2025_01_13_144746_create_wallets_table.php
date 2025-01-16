@@ -14,6 +14,7 @@ return new class extends Migration
         Schema::create('wallets', function (Blueprint $table) {
             $table->id();
             $table->foreignId('user_id')->constrained();
+            $table->string('wallet_id')->unique()->nullable();
             $table->string('amount')->default('0');
             $table->string('payment_method')->default('MMK');
             $table->decimal('balance', 15, 2)->default(0);

@@ -11,6 +11,8 @@ use Illuminate\Support\Str;
 
 class User extends Authenticatable
 {
+
+
     /** @use HasFactory<\Database\Factories\UserFactory> */
     use HasFactory, Notifiable, HasRoles;
 
@@ -33,6 +35,13 @@ class User extends Authenticatable
         static::created(function ($user) {
             $user->referral_code = Str::random(8); // Generate a random referral code
             $user->save();
+        });
+
+        static::created(function ($user) {
+            $user->wallet()->create([
+                'wallet_id' => Str::random(16), // Generate a random wallet ID
+                'balance' => 0.00, // Default balance
+            ]);
         });
     }
 
@@ -62,6 +71,14 @@ class User extends Authenticatable
     public function wallet()
     {
         return $this->hasOne(Wallet::class);
+    }
+
+    public function referrals() {
+        return $this->hasMany(Referral::class, 'referrer_id');
+    }
+
+    public function referredBy() {
+        return $this->belongsTo(User::class, 'referred_id');
     }
 
 }

@@ -20,4 +20,10 @@ class AdminController extends Controller
         {
             return view('admin.profile.edit');
         }
+
+        public function mywallet()
+        {
+            $wallet = auth()->user()->wallet;
+            return view('admin.profile.mywallet',compact('wallet'));
+        }
 }
