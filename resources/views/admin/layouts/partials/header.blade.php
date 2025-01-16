@@ -1,8 +1,8 @@
 <a aria-label="Hide Sidebar" class="app-sidebar__toggle" data-bs-toggle="sidebar" href="javascript:void(0)"></a>
 <!-- sidebar-toggle-->
 <a class="logo-horizontal " href="index.html">
-    <img src="../assets/images/brand/logo-white.png" class="header-brand-img desktop-logo" alt="logo">
-    <img src="../assets/images/brand/logo-dark.png" class="header-brand-img light-logo1"
+    <img src="{{asset('')}}assets/images/brand/logo-white.png" class="header-brand-img desktop-logo" alt="logo">
+    <img src="{{asset('')}}assets/images/brand/logo-dark.png" class="header-brand-img light-logo1"
         alt="logo">
 </a>
 <!-- LOGO -->
@@ -34,6 +34,7 @@
                         </div>
                     </div>
                 </div>
+                <!--
                 <div class="d-flex country">
                     <a class="nav-link icon text-center" data-bs-target="#country-selector"
                         data-bs-toggle="modal">
@@ -41,7 +42,7 @@
                             class="fs-16 ms-2 d-none d-xl-block">English</span>
                     </a>
                 </div>
-                <!-- COUNTRY -->
+                 COUNTRY -->
                 <div class="d-flex">
                     <a class="nav-link icon theme-layout nav-link-bg layout-setting">
                         <span class="dark-layout"><i class="fe fe-moon"></i></span>

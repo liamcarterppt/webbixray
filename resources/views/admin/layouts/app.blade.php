@@ -7,11 +7,11 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>{{ config('app.name', 'Laravel') }}</title>
+    <title>{{ getSetting('site_name', 'Default Site Name') }}</title>
 
     <!-- Fonts -->
     <!-- BOOTSTRAP CSS -->
-    <link id="style" href="../assets/plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link id="style" href="{{asset('')}}assets/plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
     @include('admin.layouts.partials.styles')
     @stack('styles')
@@ -102,7 +102,7 @@
         </div>
         <!--/Sidebar-right-->
 
-        <!-- Country-selector modal-->
+        <!-- Country-selector modal
         <div class="modal fade" id="country-selector">
             <div class="modal-dialog modal-dialog-centered" role="document">
                 <div class="modal-content country-select-modal">
@@ -184,7 +184,7 @@
                 </div>
             </div>
         </div>
-        <!-- Country-selector modal-->
+         Country-selector modal-->
 
         <!-- FOOTER -->
         <footer class="footer">

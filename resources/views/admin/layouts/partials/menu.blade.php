@@ -36,26 +36,19 @@
                             <li><a href="{{route('permissions.index')}}" class="slide-item">Permissions</a></li>
 
                         </ul>
-                        <div class="menutabs-content mt-5 p-0">
-                            <div class="Annoucement_card">
-                                <div class="text-center">
-                                    <div>
-                                        <h5 class="title mt-0 mb-1 ms-2 font-weight-bold tx-12"> Go for Premium Account </h5>
-                                        <div class="bg-layer">
-                                            <img src="../assets/images/media/37.png" alt="img" class="text-center mx-auto">
-                                        </div>
-                                        <p class="subtext mt-0 mb-0 ms-2 fs-13 text-center my-2"> $399.9 /Monthly</p>
-                                    </div>
-                                </div>
-                                <button class="btn btn-block btn-primary mt-4 fs-14"> Upgrade</button>
-                            </div>
-                        </div>
                     </div>
 
                 </div>
             </div>
         </li>
     </ul>
+</li>
+
+<li>
+    <a class="side-menu__item has-link" href="{{route('admin.settings.index')}}" >
+        <i class="side-menu__icon fe fe-zap"></i>
+        <span class="side-menu__label">Settings</span>
+    </a>
 </li>
 
 
