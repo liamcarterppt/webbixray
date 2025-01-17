@@ -8,7 +8,7 @@
 
 
 <!-- ROW-1 OPEN -->
-<div class="row">
+<div class="row"> 
     <div class="col-xl-4">
         <div class="card">
             <div class="card-header">

@@ -55,7 +55,12 @@
                                     <td class="text-nowrap align-middle"><span>{{$role->guard_name}}</span></td>
                                     <td class="text-center align-middle">
                                         <div class="btn-group align-top">
-                                            <button class="btn btn-sm btn-primary badge" data-target="#user-form-modal" data-bs-toggle="" type="button">Edit</button> <button class="btn btn-sm btn-primary badge" type="button"><i class="fa fa-trash"></i></button>
+                                            <a class="btn btn-sm btn-primary badge" href="{{ route('roles.edit',$role  ->id) }}" >Edit</a>
+                                            <form action="{{route('roles.destroy',$role->id)}}" method="POST">
+                                            @csrf
+                                            @method('DELETE')
+                                             <button class="btn btn-sm btn-primary badge" type="submit"><i class="fa fa-trash"></i></button>
+                                             </form>
                                         </div>
                                     </td>
 

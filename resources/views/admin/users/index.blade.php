@@ -63,7 +63,7 @@
                                             <form action="{{route('users.destroy',$user->id)}}" method="POST">
                                                 @csrf
                                                 @method('DELETE') 
-                                            <button class="btn btn-sm btn-primary badge" type="submmit"><i class="fa fa-trash"></i></button>
+                                            <button class="btn btn-sm btn-primary badge" type="submit"><i class="fa fa-trash"></i></button>
                                             </form>
                                         </div>
                                     </td>
