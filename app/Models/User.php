@@ -39,7 +39,7 @@ class User extends Authenticatable
 
         static::created(function ($user) {
             $user->wallet()->create([
-                'wallet_id' => Str::random(16), // Generate a random wallet ID
+                'wallet_id' => Str::random(12), // Generate a random wallet ID
                 'balance' => 0.00, // Default balance
             ]);
         });

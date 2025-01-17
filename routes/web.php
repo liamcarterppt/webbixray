@@ -12,6 +12,14 @@ use App\Http\Controllers\Admin\WalletController;
 use App\Http\Controllers\Admin\TransactionController;
 use App\Http\Controllers\Admin\ReferralController;
 
+
+
+
+Route::fallback(function () {
+    return response()->view('errors.404', [], 404);
+});
+
+
 Route::get('/', function () {
     return view('home');
 });

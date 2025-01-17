@@ -31,7 +31,7 @@ class RegisterController extends Controller
      * @var string
      */
 
-    protected $redirectTo = '/dashboard';
+    protected $redirectTo = 'admin/dashboard';
 
     /**
      * Create a new controller instance.
@@ -66,11 +66,28 @@ class RegisterController extends Controller
      */
     protected function create(array $data)
     {
-        return User::create([
+        $referrer = User::where('referral_code', request()->query('ref'))->first();
+        $user = User::create([
             'name' => $data['name'],
             'email' => $data['email'],
             'password' => Hash::make($data['password']),
         ]);
+
+        if ($referrer) {
+            Referral::create([
+                'referrer_id' => $referrer->id,
+                'referred_id' => $user->id,
+                'referral_code' => Str::random(8),
+            ]);
+        } else {
+            Referral::create([
+                'referrer_id' => 1,
+                'referred_id' => $user->id,
+                'referral_code' => Str::random(8),
+            ]);
+        }
+
         return $user;
+
     }
 }

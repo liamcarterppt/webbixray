@@ -95,13 +95,19 @@
                                         <!--/APP-Menu-TOGGLE-->
 
                                         <div class="header-nav-right d-none d-lg-flex">
+                                            @auth
+                                            <a href="{{ url('admin/dashboard') }}" class="btn ripple btn-min w-sm btn-outline-primary me-2 my-auto d-lg-none d-xl-block d-block"
+                                            >Dashboard</a>
+                                            @else
+                                            <!--
                                             <a href="{{route('register')}}"
                                                 class="btn ripple btn-min w-sm btn-outline-primary me-2 my-auto d-lg-none d-xl-block d-block"
                                                 >New User
-                                            </a>
+                                            </a> -->
                                             <a href="{{route('login')}}" class="btn ripple btn-min w-sm btn-primary me-2 my-auto d-lg-none d-xl-block d-block"
                                                 >Login
                                             </a>
+                                            @endauth
                                         </div>
                                     </div>
                                 </div>
