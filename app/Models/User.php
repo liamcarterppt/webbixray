@@ -25,8 +25,16 @@ class User extends Authenticatable
         'name',
         'email',
         'password',
-        'referral_code'
+        'referral_code',
+        'profile_photo'
     ];
+
+    public function getProfilePhotoUrlAttribute()
+    {
+        return $this->profile_photo
+            ? url('storage/profile_photos/' . $this->profile_photo)
+            : url('storage/profile_photos/default.png');
+    }
 
     protected static function boot()
     {
